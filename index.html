@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan Oura & Tiora</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        background: linear-gradient(90deg, #b24592, #f15f79);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 60px;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      ul li {
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+      }
+
+      ul li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: left 0.3s ease;
+      }
+
+      ul li:hover::after {
+        left: 0;
+      }
+
+      ul li:hover {
+        transform: scale(1.1);
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 100px 60px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* ===== BERANDA ===== */
+      #beranda {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("https://res.cloudinary.com/dk0z4ums3/image/upload/v1635748411/attached_image/ternyata-pegangan-tangan-bisa-menangkal-stres.jpg")
+            center/cover no-repeat;
+        color: white;
+      }
+
+      #beranda h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      #beranda h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #ffdee9;
+      }
+
+      #beranda p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: #f1f1f1;
+      }
+
+      #lokasi {
+        color: Black;
+      }
+
+      /* ===== LAINNYA ===== */
+      #tentang {
+        background: url("https://annurngrukem.com/wp-content/uploads/2019/11/Waktu-1024x1024.jpg")
+          center/cover no-repeat;
+      }
+      #acara {
+        background: url("https://marketplace.canva.com/EAFwLP-mvEs/2/0/1600w/canva-abu-abu-aesthetic-desktop-wallpaper-GXbQBG2VA0Q.jpg")
+          center/cover no-repeat;
+      }
+      #ucapan {
+        background: url("https://pbs.twimg.com/media/EvH6RTeWYAM3pdM.jpg")
+          center/cover no-repeat;
+      }
+      #lokasi {
+        background: url("https://cdn.pixabay.com/photo/2018/05/30/20/55/marker-3442532_640.png")
+          center/cover no-repeat;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 15px;
+      }
+      p {
+        max-width: 600px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+        }
+        ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          margin-top: 10px;
+        }
+        #beranda h1 {
+          font-size: 2rem;
+        }
+        #beranda h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="bgMusic" autoplay loop>
+      <source
+        src="Aziz Hedra - Somebody's Pleasure (Extended Version) (128).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <nav>
+      <div class="logo">💍 Oura & Tiora</div>
+      <ul>
+        <li onclick="scrollToSection('beranda')">Beranda</li>
+        <li onclick="scrollToSection('tentang')">Waktu</li>
+        <li onclick="scrollToSection('acara')">Acara</li>
+        <li onclick="scrollToSection('ucapan')">Ucapan</li>
+        <li onclick="scrollToSection('lokasi')">Lokasi</li>
+      </ul>
+    </nav>
+
+    <section id="beranda">
+      <h1>Undangan Pernikahan</h1>
+      <h2>Oura & Tiora</h2>
+      <p>
+        Dengan penuh kebahagiaan, kami mengundang Anda untuk menjadi bagian dari
+        momen spesial kami.
+      </p>
+    </section>
+
+    <section id="tentang">
+      <h2>Waktu</h2>
+      <p>
+        20 Januari 2026<br />
+        The Grand Hall Bandung, Jawa Barat<br />
+      </p>
+
+      <h3 style="margin-top: 30px">💞 Hitung Mundur Hari Bahagia 💞</h3>
+      <h1
+        id="countdown"
+        style="font-size: 2rem; color: #b24592; margin-top: 10px"
+      ></h1>
+    </section>
+
+    <section id="acara">
+      <h2>Rangkaian Acara</h2>
+      <p>
+        <b>Selasa, 20 Januari 2026</b><br />
+        Akad Nikah: 09.00 WIB<br />
+        Resepsi: 11.00 WIB - 14.00 WIB<br />
+        The Grand Hall Bandung, Jawa Barat
+      </p>
+    </section>
+
+    <section id="ucapan">
+      <h2 style="color: #f1f1f1">Ucapan dan Doa</h2>
+      <p style="color: #f1f1f1">
+        Terima kasih atas doa dan restu yang telah diberikan kepada kami. Semoga
+        cinta ini menjadi berkah dan kebahagiaan selamanya. 💐
+      </p>
+    </section>
+
+    <section id="lokasi">
+      <h2>Lokasi Acara</h2>
+      <p>Temukan lokasi acara kami di bawah ini:</p>
+      <br />
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.904018152066!2d106.8249488!3d-6.1776376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f51b9fae7ce5%3A0x25b4cab74e6a1a5!2sIstana%20Negara%20(Jakarta)%2C%20Jalan%20Veteran%20No.17%2C%20Jakarta%20Pusat!5e0!3m2!1sid!2sid!4v1699630000000!5m2!1sid!2sid"
+        width="400"
+        height="300"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+      function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        triggerConfetti();
+      }
+
+      function triggerConfetti() {
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ["#ff69b4", "#ffd1dc", "#b24592", "#f15f79"],
+        });
+      }
+
+      const countdown = document.getElementById("countdown");
+      const targetDate = new Date("Jan 20, 2026 09:00:00").getTime();
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+
+        if (distance < 0) {
+          countdown.innerHTML = "💍 Hari Pernikahan Telah Tiba 💍";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
